@@ -6,7 +6,7 @@ We will have two models to focus on in this application. "Country" and "Aircraft
 
 ## Country Model
 The Country model will be composed of:
-1. name (string) - name of country
+1. name (string) - name of country. CAnnot be null
 2. GFI (float) - global firepower index - between 0 and 10 (the closer the number is to 0 the better, by the way).
 
 ## Aircraft Model
@@ -15,6 +15,8 @@ The aircraft model will be composed of:
 2. Model Number (string)
 3. Release Year (integer) - must be above 1903 ;)
 4. Unit Cost (integer) - stored in millions.
+5. Image Url (string)
+6. Type ENUM (Attack, Versatile, Transport, Reconoissance Plane)
 
 # Routes
 We should establish CRUD routes for both Country and Aircraft. Getting aircraft should also include the country name.
