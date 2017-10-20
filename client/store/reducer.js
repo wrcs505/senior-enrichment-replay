@@ -9,9 +9,8 @@ export default function rootReducer(state = initialState, action){
     switch(action.type){
         case RECEIVE_AIRCRAFT: 
             newState.aircraft = action.aircraft;
-            break;
+            return newState
         default: 
             return state;
     }
-    return newState;
 }

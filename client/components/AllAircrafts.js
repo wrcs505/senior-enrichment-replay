@@ -7,11 +7,24 @@ export default class AllAircraft extends Component {
 
     constructor(props){
         super(props);
+        // this.state = {
+        //     aircraft: []
+        // }
         this.state = store.getState();
     }
 
     //when this component arrives on dom. 
+    //event emitter. upon subscription we're saying listen on('storechange')
     componentDidMount(){
+        
+        
+        // axios.get('/api/aircraft')
+        //     .then(res => {
+        //         let airplanes = res.data; 
+        //         console.log('AIRPLANES', airplanes);
+        //         this.setState({aircraft: airplanes});
+        //     })
+        
         this.unsubscribe = store.subscribe(() => {
             this.setState(store.getState()); 
         })
@@ -21,9 +34,9 @@ export default class AllAircraft extends Component {
     componentWillUnmount(){
         this.unsubscribe();
     }
+
     
     render(){
-        console.log('state!!', this.state);
         return (
             <div> 
                 {

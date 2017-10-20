@@ -12,7 +12,6 @@ export function receiveAircraft(aircraft){
 
 //thunk
 export function fetchAllAircraft () {
-    console.log('did this run??');
     return function(dispatch){
         return axios.get('/api/aircraft')
             .then(res => res.data)

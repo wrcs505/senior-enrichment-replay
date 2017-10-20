@@ -6,8 +6,10 @@ const Aircraft = require('./models/aircraft');
 
 
 //Aircraft.getAirplanesByCountry
-//Country.getAircraft()
 Aircraft.belongsTo(Country);
+//puts countryId on aircraft table. 
+
+//if i have a country instance Country.prototype.
 Country.hasMany(Aircraft); 
 
 Aircraft.belongsTo(Aircraft, {as: 'previous'});

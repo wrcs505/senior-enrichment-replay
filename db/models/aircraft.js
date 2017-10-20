@@ -27,17 +27,28 @@ let Aircraft = db.define('aircraft', {
     }
 })
 
+//hooks
 Aircraft.hook('beforeValidate', (instance) => {
     if(instance.unit_cost > 1000000){
         instance.unit_cost %= 1000000;
     }
 })
 
-Aircraft.prototype.liveWithTheWrightBrother = function(){
+//instance
+Aircraft.prototype.liveWithTheWrightBrothers = function(){
     this.year = 1903;
 }
 
+//class method
+Aircraft.findModern = function(){
+    return Aircraft.findAll({
+        where: {
+            year: {
+                $gt: 1975
+            }
+        }
+    })
+}
 
 
 module.exports = Aircraft;
-//import is NOT a real thing.
