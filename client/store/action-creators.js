@@ -1,7 +1,7 @@
 import axios from 'axios'; 
 
-const RECEIVE_AIRCRAFT = 'RECEIVE_AIRCRAFT';
+//actions
 
-//action creator
+//action creators
 
-//thunk
+//thunks

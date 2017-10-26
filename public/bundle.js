@@ -2343,7 +2343,7 @@ _reactDom2.default.render(_react2.default.createElement(
         return _react2.default.createElement(
           'h1',
           null,
-          'TESTING'
+          'JUST SETTING THINGS UP!'
         );
       } })
   )

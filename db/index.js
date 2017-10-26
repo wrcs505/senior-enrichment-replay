@@ -1,3 +1,11 @@
 const db = require('./_db'); 
+const Country = require('./models/country'); 
+const Aircraft = require('./models/aircraft');
 
-module.exports = db;
+// PLACE ASSOCIATIONS HERE
+
+module.exports = {
+    db,
+    Country,
+    Aircraft
+};
