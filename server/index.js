@@ -3,7 +3,7 @@ const path = require('path');
 const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
 const db = require('../db/_db')
-const port = 1337;
+const PORT = 1337;
 const app = express();
 
 //logging middleware
@@ -30,7 +30,7 @@ app.use((err, req, res, next) => {
 db.sync() // if you update your db schemas, make sure you drop the tables first and then recreate them
 .then(() => {
   console.log('db synced')
-  app.listen(port, () => console.log(`server listening on port ${port}`))
+  app.listen(PORT, () => console.log(`server flyin on port ${PORT}`))
 });
 
 module.exports = app;
