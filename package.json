@@ -1,11 +1,11 @@
 {
-  "name": "live-review-senior-checkpoint",
+  "name": "Project Name",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack -w & nodemon main.js"
+    "start:dev": "webpack -w & nodemon server"
   },
   "keywords": [],
   "author": "",
