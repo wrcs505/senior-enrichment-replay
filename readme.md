@@ -29,7 +29,7 @@ Use at least Sequelize, Express, React, Redux, and React-Redux when creating thi
     * type - can be either Attack, Bomber, Versatile, Transport, Reconoissance or Rescue
     * cost - decimal stored in millions (i.e. $1 million would be 1 in the database)
     * imageUrl - has default value
-    * description
+    * description - extremely large text
   * must track the aircraft it succeeds via a reference called 'succeeded'
   * must be assigned to a country
   * must have a method `getAircraftByType`, that gets aircrafts by inputted type
