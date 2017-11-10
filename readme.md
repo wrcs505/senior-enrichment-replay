@@ -23,8 +23,8 @@ Use at least Sequelize, Express, React, Redux, and React-Redux when creating thi
 
 #### Aircrafts
   * have profile info including:
-    * make - not empty or null
-    * model - not empty or null
+    * make - not empty or null (e.g. Lockheed Martin - for more [makers](https://en.wikipedia.org/wiki/List_of_aircraft_manufacturers))
+    * model - not empty or null (ex. [Lockheed models](https://en.wikipedia.org/wiki/List_of_Lockheed_aircraft))
     * year - after 1903
     * type - can be either Attack, Bomber, Versatile, Transport, Reconoissance or Rescue
     * cost - decimal stored in millions (i.e. $1 million would be 1 in the database)
