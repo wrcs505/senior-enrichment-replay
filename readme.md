@@ -13,7 +13,7 @@ Make a thing **again**!
 ## Requirements
 
 ### The Premise
- Design a website for aircraft fanatics and create a RESTful API that allows you to manage these aircrafts! 
+ Design a website for aircraft fanatics 🤓 and create a RESTful API that allows you to manage these aircrafts! 
 
 ### The tools
 
@@ -25,7 +25,7 @@ Use at least Sequelize, Express, React, Redux, and React-Redux when creating thi
   * have profile info including:
     * make - not empty or null (e.g. Lockheed Martin - for more [makers](https://en.wikipedia.org/wiki/List_of_aircraft_manufacturers))
     * model - not empty or null (ex. [Lockheed models](https://en.wikipedia.org/wiki/List_of_Lockheed_aircraft))
-    * year - after 1903
+    * year - after 1903 👵
     * type - can be either Attack, Bomber, Versatile, Transport, Reconoissance or Rescue
     * cost - decimal stored in millions (i.e. $1 million would be 1 in the database)
     * imageUrl - has default value
