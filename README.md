@@ -44,7 +44,6 @@ Use at least Sequelize, Express, React, Redux, and React-Redux when creating thi
   * must have a method `getTopFive` which finds the top 5 strongest nations sorted by GFI (0 is the strongest, 10 is the weakest)
 
 ### Views and Functionality
-#### See Wireframes folder for visual
 
 - Navigation: as a user I...
   * will land on **Home** by default
