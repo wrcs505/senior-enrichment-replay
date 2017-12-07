@@ -12,9 +12,10 @@ const Aircraft = db.define('aircraft', {
     allowNull: false
   },
   year: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.DECIMAL,
     validate: {
       min: 1903,
+      max: 2018
     }
   },
   type: {
@@ -22,8 +23,8 @@ const Aircraft = db.define('aircraft', {
   },
   cost: {
     type: Sequelize.DECIMAL,
-    get: function() {
-      return this.cost * 1000000;
+    get() {
+      return this.getDataValue('cost') * 1000000;
     }
   },
   imageUrl: {
@@ -49,6 +50,7 @@ Aircraft.getAircraftByType = function(type) {
       type: type
     }
   })
+  .catch(err => err)
 }
 
 module.exports = Aircraft;
