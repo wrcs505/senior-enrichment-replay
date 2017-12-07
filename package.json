@@ -1,11 +1,12 @@
 {
-  "name": "Project Name",
+  "name": "WRSseniorEP",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "webpack -w & nodemon main"
+    "start:dev": "webpack -w & nodemon main",
+    "seed": "node seed.js"
   },
   "keywords": [],
   "author": "",
