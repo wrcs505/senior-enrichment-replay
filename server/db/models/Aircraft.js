@@ -24,7 +24,7 @@ const Aircraft = db.define('aircraft', {
   cost: {
     type: Sequelize.DECIMAL,
     get() {
-      return this.getDataValue('cost') * 1000000;
+      return this.getDataValue('cost') + 'm';
     }
   },
   imageUrl: {

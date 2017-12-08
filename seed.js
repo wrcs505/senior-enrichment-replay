@@ -9,7 +9,7 @@ const aircraftList = [{
   year: 1964,
   type: 'Reconoissance',
   cost: 4000,
-  imageUrl: '/public/images/SR-71.jpg',
+  imageUrl: '/images/SR-71.jpg',
   description: 'The fastest copypasta in the world'
 }, {
   make: 'Lockheed Martin',
@@ -17,7 +17,7 @@ const aircraftList = [{
   year: 1955,
   type: 'Reconoissance',
   cost: 2000,
-  imageUrl: '/public/images/U-2.jpg',
+  imageUrl: '/images/U-2.jpg',
   description: 'Gary Powers got a raw deal'
 }, {
   make: 'Boeing',
@@ -25,7 +25,7 @@ const aircraftList = [{
   year: 1952,
   type: 'Bomber',
   cost: 3500,
-  imageUrl: '/public/images/B-52.jpg',
+  imageUrl: '/images/B-52.jpg',
   description: 'The love shack is a little old place where we can get together'
 }, {
   make: 'Boeing',
@@ -33,7 +33,7 @@ const aircraftList = [{
   year: 1942,
   type: 'Bomber',
   cost: 2500,
-  imageUrl: '/public/images/B-29.jpg',
+  imageUrl: '/images/B-29.jpg',
   description: 'Target practice for Germans'
 }, {
   make: 'Northrup Grumman',
@@ -41,7 +41,7 @@ const aircraftList = [{
   year: 1942,
   type: 'Attack',
   cost: 500,
-  imageUrl: '/public/images/F6F.jpg',
+  imageUrl: '/images/F6F.jpg',
   description: 'The plane that won the Pacific'
 }, {
   make: 'Northrup Grumman',
@@ -49,42 +49,42 @@ const aircraftList = [{
   year: 1972,
   type: 'Attack',
   cost: 2000,
-  imageUrl: '/public/images/A-10.jpg',
+  imageUrl: '/images/A-10.jpg',
   description: 'BRRRRRRRRRRRRRRT'
 }];
 
 const countriesList = [{
   name: 'South Africa',
   GFI: 1.2,
-  flagUrl: '/public/images/southAfrica.png'
+  flagUrl: '/images/southAfrica.png'
 }, {
   name: 'Australia',
   GFI: 6.8,
-  flagUrl: '/public/images/australia.png'
+  flagUrl: '/images/australia.png'
 }, {
   name: 'Egypt',
   GFI: 3.4,
-  flagUrl: '/public/images/egypt.png'
+  flagUrl: '/images/egypt.png'
 }, {
   name: 'UK',
   GFI: 8.2,
-  flagUrl: '/public/images/uk.png'
+  flagUrl: '/images/uk.png'
 }, {
   name: 'USA',
   GFI: 10,
-  flagUrl: '/public/images/us.png'
+  flagUrl: '/images/us.png'
 }, {
   name: 'Argentina',
   GFI: 2.25,
-  flagUrl: '/public/images/argentina.png'
+  flagUrl: '/images/argentina.png'
 }, {
   name: 'Saudi Arabia',
   GFI: 4.9,
-  flagUrl: '/public/images/saudi.jpg'
+  flagUrl: '/images/saudi.jpg'
 }, {
   name: 'Canada',
   GFI: 6.5,
-  flagUrl: '/public/images/canada.jpg'
+  flagUrl: '/images/canada.jpg'
 }];
 
 // const id = () => Math.round(Math.random() * (countries.length - 1)) + 1;

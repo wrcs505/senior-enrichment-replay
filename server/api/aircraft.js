@@ -7,7 +7,7 @@ const { Aircraft } = require('../db/models');
 // GET all aircraft: api/aircraft
 router.get('/', function (req, res, next) {
   Aircraft.findAll()
-    .then(aircraft => res.json(aircraft))
+    .then(allAircraft => res.json(allAircraft))
     .catch(next);
 });
 
@@ -22,10 +22,8 @@ router.get('/:aircraftId', function (req, res, next) {
 //GET aircraft by type: api/aircraft/types/:type
 
 router.get('/types/:type', function (req, res, next) {
-  console.log('route log test')
   Aircraft.getAircraftByType(req.params.type)
     .then(aircraftList => {
-      console.log('the route log: ', aircraftList)
       res.json(aircraftList)
     })
     .catch(next);
