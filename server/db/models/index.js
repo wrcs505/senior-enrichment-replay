@@ -9,6 +9,8 @@ const Aircraft = require('./Aircraft');
 const Country = require('./Country');
 const { db } = require('../_db');
 
+
+// Add default scope + include
 Aircraft.belongsTo(Country);
 
 Country.hasMany(Aircraft);

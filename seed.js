@@ -1,6 +1,6 @@
 const { db } = require('./server/db/_db.js');
-const Aircraft = require('./server/db/models/Aircraft');
-const Country = require('./server/db/models/Country');
+const { Aircraft } = require('./server/db/models');
+const { Country } = require('./server/db/models');
 
 
 const aircraftList = [{
@@ -10,7 +10,8 @@ const aircraftList = [{
   type: 'Reconoissance',
   cost: 4000,
   imageUrl: '/images/SR-71.jpg',
-  description: 'The fastest copypasta in the world'
+  description: 'The fastest copypasta in the world',
+  countryId: 1,
 }, {
   make: 'Lockheed Martin',
   model: 'U-2',
@@ -18,7 +19,8 @@ const aircraftList = [{
   type: 'Reconoissance',
   cost: 2000,
   imageUrl: '/images/U-2.jpg',
-  description: 'Gary Powers got a raw deal'
+  description: 'Gary Powers got a raw deal',
+  countryId: 2
 }, {
   make: 'Boeing',
   model: 'B-52 Stratofortress',
@@ -26,7 +28,8 @@ const aircraftList = [{
   type: 'Bomber',
   cost: 3500,
   imageUrl: '/images/B-52.jpg',
-  description: 'The love shack is a little old place where we can get together'
+  description: 'The love shack is a little old place where we can get together',
+  countryId: 2
 }, {
   make: 'Boeing',
   model: 'B-29 Superfortresss',
@@ -34,7 +37,8 @@ const aircraftList = [{
   type: 'Bomber',
   cost: 2500,
   imageUrl: '/images/B-29.jpg',
-  description: 'Target practice for Germans'
+  description: 'Target practice for Germans',
+  countryId: 4
 }, {
   make: 'Northrup Grumman',
   model: 'F6F Hellcat',
@@ -42,7 +46,8 @@ const aircraftList = [{
   type: 'Attack',
   cost: 500,
   imageUrl: '/images/F6F.jpg',
-  description: 'The plane that won the Pacific'
+  description: 'The plane that won the Pacific',
+  countryId: 2
 }, {
   make: 'Northrup Grumman',
   model: 'A-10 Warthog',
@@ -50,7 +55,8 @@ const aircraftList = [{
   type: 'Attack',
   cost: 2000,
   imageUrl: '/images/A-10.jpg',
-  description: 'BRRRRRRRRRRRRRRT'
+  description: 'BRRRRRRRRRRRRRRT',
+  countryId: 1
 }];
 
 const countriesList = [{
@@ -90,13 +96,14 @@ const countriesList = [{
 // const id = () => Math.round(Math.random() * (countries.length - 1)) + 1;
 
 const seed = () =>
-  Promise.all(aircraftList.map(aircraft =>
-    Aircraft.create(aircraft))
-  )
-  .then(() =>
   Promise.all(countriesList.map(country =>
     Country.create(country))
+  )
+  .then(() =>
+  Promise.all(aircraftList.map(aircraft =>
+    Aircraft.create(aircraft))
   ))
+  // because of associations, can add include statement to populate second model
 
   seed()
   .then(() => db.close())

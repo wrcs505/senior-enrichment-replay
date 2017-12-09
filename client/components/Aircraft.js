@@ -3,8 +3,9 @@ import { withRouter, NavLink } from 'react-router-dom';
 
 export default function Aircraft (props) {
 
-  const aircraft = props.aircraft || [];
 
+  const aircraft = props.aircraft || [];
+  // console.log('aircraft log: ', aircraft)
   return (
     <li className="media">
       <div className="media-left">

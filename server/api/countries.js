@@ -17,7 +17,7 @@ router.get('/topfive', function (req, res, next) {
 
   Country.getTopFive()
     .then(countryList => {
-      console.log('the route log: ', countryList)
+      // console.log('the route log: ', countryList)
       res.json(countryList)
     })
     .catch(next);

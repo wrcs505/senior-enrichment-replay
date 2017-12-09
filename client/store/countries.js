@@ -5,6 +5,7 @@ import axios from 'axios';
 const GET_COUNTRY = 'GET_COUNTRY';
 const GET_ALL_COUNTRIES = 'GET_ALL_COUNTRIES';
 
+
 // ACTION CREATORS
 export function getCountry (country) {
   const action = { type: GET_COUNTRY, country };
@@ -20,7 +21,7 @@ export function getAllCountries (allCountries) {
 export function fetchAllCountries () {
 
   return function thunk (dispatch) {
-    return axios.get('/api/country')
+    return axios.get('/api/countries')
       .then(res => res.data)
       .then(allCountries => {
         const action = getAllCountries(allCountries);
@@ -28,6 +29,8 @@ export function fetchAllCountries () {
       });
   };
 }
+
+
 
 export function postCountry (country, history) {
 
@@ -51,7 +54,7 @@ export default function reducer (state = [], action) {
     //   return [...state, action.aircraft];
 
     case GET_ALL_COUNTRIES:
-      return action.allCountries
+      return  action.allCountries
     default:
       return state;
   }

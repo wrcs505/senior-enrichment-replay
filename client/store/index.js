@@ -9,17 +9,14 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 /* combineReducers is not currently used, but eventually should be for modular code :D */
 
-// const initialState = {}
-
-// const rootReducer = function(state = initialState, action) {
-//   switch(action.type) {
-//     default: return state
-//   }
-// };
 import allAircraft from './aircraft';
+import allCountries from './countries';
+import topFive from './topFive';
 
 const reducer = combineReducers({
-  allAircraft
+  allAircraft,
+  allCountries,
+  topFive
 });
 
 const store = createStore(
@@ -33,3 +30,5 @@ const store = createStore(
 export default store;
 
 export * from './aircraft';
+export * from './countries';
+export * from './topFive';
