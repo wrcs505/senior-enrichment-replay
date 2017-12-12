@@ -27,6 +27,14 @@ let CountryInputs = props => {
         <label htmlFor="flagUrl">Flag URL</label>
         <Field name="flagUrl" component="input" type="text"  placeholder={ country.flagUrl } />
       </div>
+
+      {
+      //   <div>
+      //   <label htmlFor="flagUrl">Flag URL</label>
+      //   <Field name="flagUrl" component="input" type="text"  placeholder={ country. } />
+      // </div>
+      }
+
       <button type="submit">Submit</button>
       <button type="button" disabled={pristine || submitting} onClick={reset}>
       Clear Values

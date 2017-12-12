@@ -4,11 +4,11 @@ import { withRouter, NavLink } from 'react-router-dom';
 
 export default function Navbar (props) {
 
-  // const { currentChannel } = props;
-
   return (
     <div>
       <nav>
+      <h1>Welcome to Will's <NavLink to="/">CRUDdy app</NavLink></h1>
+      <div>
         <NavLink to="/aircraft">
           <span>
             <h3>Full Aircraft List</h3>
@@ -19,15 +19,10 @@ export default function Navbar (props) {
             <h3>Full Country List</h3>
           </span>
         </NavLink>
+      </div>
       </nav>
     </div>
   );
 }
 
-// const mapStateToProps = function (state) {
-//   return {
-//     // currentChannel: state.currentChannel
-//   };
-// };
 
-// export default withRouter(connect(mapStateToProps)(Navbar));

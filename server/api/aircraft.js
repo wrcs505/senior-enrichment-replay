@@ -1,12 +1,13 @@
 const router = require('express').Router();
 const { Aircraft } = require('../db/models');
+const { Country } = require('../db/models');
 
 // GET Routes
 
 
 // GET all aircraft: api/aircraft
 router.get('/', function (req, res, next) {
-  Aircraft.findAll()
+  Aircraft.findAll({include: {model: Country}})
     .then(allAircraft => res.json(allAircraft))
     .catch(next);
 });
@@ -32,7 +33,23 @@ router.get('/types/:type', function (req, res, next) {
 // POST new aircraft: api/aircraft
 
 router.post('/', function (req, res, next) {
-	Aircraft.create(req.body)
+  console.log('backend log: ', req.body.make)
+  const newAircraft = Aircraft.build(req.body)
+
+  Aircraft.findOrCreate({where: {model: newAircraft.model}})
+  .spread((aircraft, bool) => {
+    if (!bool) {
+      return aircraft.update({
+        make: newAircraft.make,
+        model: newAircraft.model,
+        year: newAircraft.year,
+        type: newAircraft.type,
+        cost: newAircraft.cost,
+        imageUrl: newAircraft.imageUrl,
+        description: newAircraft.description
+      })
+    }
+  })
 	.then(aircraft => res.json(aircraft))
 	.catch(next);
 });
@@ -49,10 +66,10 @@ router.put('/:aircraftId', function (req, res, next) {
 
 // DELETE a single aircraft: api/aircraft/:aircraftId
 
-router.delete('/:aircraftId', function (req, res, next) {
-  const ID = req.params.aircraftId;
-  Aircraft.destroy({where: {ID}})
-		.then(aircraft => aircraft.update(req.body))
+router.delete('/:aircraftModel', function (req, res, next) {
+  const model = req.params.aircraftModel;
+  Aircraft.destroy({where: {model}})
+		// .then(aircraft => aircraft.update(req.body))
 		.then(res.sendStatus(204))
     .catch(next);
 });

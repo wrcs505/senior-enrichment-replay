@@ -5,7 +5,9 @@ export default function Aircraft (props) {
 
 
   const aircraft = props.aircraft || [];
-  // console.log('aircraft log: ', aircraft)
+  const aircraftCountry = props.aircraft.country;
+
+  console.log('aircraft log: ', aircraft)
   return (
     <li className="media">
       <div className="media-left">
@@ -24,7 +26,10 @@ export default function Aircraft (props) {
         <h4 className="media-heading">Cost: { aircraft.cost }</h4>
         <h4 className="media-heading">Year: { aircraft.year }</h4>
         <h4 className="media-heading">Type: { aircraft.type }</h4>
-
+        <h5>Owner:</h5>
+        <NavLink to={`/countries/${aircraftCountry.id}`}>
+          <h4>{ aircraftCountry.name }</h4>
+        </NavLink>
       </div>
     </li>
   );

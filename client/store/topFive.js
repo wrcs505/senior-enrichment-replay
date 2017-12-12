@@ -13,7 +13,6 @@ export function fetchTopFive () {
     return axios.get('/api/countries/topfive')
       .then(res => res.data)
       .then(topFive => {
-        console.log('axios log: ', topFive)
         const action = getTopFive(topFive);
         dispatch(action);
       });

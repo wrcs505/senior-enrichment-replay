@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { Field, reduxForm, formValues } from 'redux-form';
-import { deleteCountry } from '../store';
+import { Field, reduxForm } from 'redux-form';
+
 
 let CountrySelect = props => {
   console.log('select country log: ', props)

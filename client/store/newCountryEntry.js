@@ -1,5 +1,3 @@
-
-
 const GET_SELECTED_COUNTRY = 'GET_SELECTED_COUNTRY';
 
 export function getSelectedCountry (selectCountry) {

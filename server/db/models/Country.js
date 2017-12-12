@@ -16,10 +16,10 @@ const Country = db.define('country', {
     type: Sequelize.STRING,
     defaultValue: ''
   }
-}, {
-  defaultScope: {
-    include: Aircraft
-  }
+// }, {
+//   defaultScope: {
+//     include: Aircraft
+//   }
 
 })
 

@@ -7,7 +7,7 @@ function TopFive (props) {
   // Top 5 in progress:
 
 
-  console.log('T5 props log: ', props)
+  // console.log('T5 props log: ', props)
   const topFive = props.topFive || [];
 
   return (

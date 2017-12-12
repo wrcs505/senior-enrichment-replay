@@ -1,16 +1,13 @@
 import React from 'react'
 import CountryInputs from './CountryInputs'
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
-import store, { postCountry, getSelectedCountry, deleteCountry } from '../store';
+import { postCountry, getSelectedCountry, deleteCountry } from '../store';
 import CountrySelect from './CountrySelect';
 import CountryDelete from './CountryDelete';
 
 
 function CountryRecords (props) {
-
   var countries = props.allCountries;
-
     return (
       <div>
         <CountrySelect onSubmit={props.getSelectedCountry} countries={countries} />
@@ -22,7 +19,6 @@ function CountryRecords (props) {
 
 
 const mapStateToProps = (state) => ({
-  // ...
   allCountries: state.allCountries,
   selectedCountry: state.allCountries.find(country => country.name === state.selectCountry.selectCountry)
 });

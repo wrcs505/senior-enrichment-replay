@@ -7,6 +7,7 @@ import Navbar from './Navbar';
 import TopFive from './TopFive';
 import CountryRecords from './CountryRecords';
 import AircraftRecords from './AircraftRecords';
+import Home from './Home'
 
 export default class Main extends Component {
 
@@ -26,6 +27,7 @@ export default class Main extends Component {
       <div>
         <Navbar />
         <Switch>
+          <Route exact path="/" component={ Home } />
           <Route exact path="/country-records" component={ CountryRecords } />
           <Route exact path="/aircraft-records" component={ AircraftRecords } />
           <Route exact path="/aircraft" component={ AircraftList } />
@@ -33,28 +35,8 @@ export default class Main extends Component {
           <Route exact path="/countries" component={ CountryList } />
           <Route exact path="/countries/topfive" component={ TopFive } />
           <Route exact path="/countries/:countryID" component={ CountryList } />
-          <Redirect to="/aircraft/" />
-          {
-
-          }
+          <Redirect to="/" />
         </Switch>
-
-
-        {
-          // <Sidebar />
-          // <Navbar />
-          // <main>
-          //   <Switch>
-          //     <Route path="/new-channel" component={NewChannelEntry} />
-          //     <Route path="/channels/:channelId" component={MessagesList} />
-          //     <Redirect to="/channels/1" />
-          //   </Switch>
-          // </main>
-        }
-        {
-
-        }
-
       </div>
     );
   }

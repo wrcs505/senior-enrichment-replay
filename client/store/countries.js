@@ -4,9 +4,6 @@ import axios from 'axios';
 // ACTION TYPES
 const GET_COUNTRY = 'GET_COUNTRY';
 const GET_ALL_COUNTRIES = 'GET_ALL_COUNTRIES';
-const GET_NEW_COUNTRY = 'GET_COUNTRY';
-// const GET_COUNTRY = 'GET_COUNTRY';
-
 
 // ACTION CREATORS
 export function getCountry (country) {
@@ -39,7 +36,7 @@ console.log('thunk log: ', country)
       .then(res => res.data)
       .then(newCountry => {
         dispatch(getCountry(newCountry));
-        history.push(`/country/${newCountry.id}`);
+        // history.push(`/country/${newCountry.id}`);
       });
   };
 }

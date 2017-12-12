@@ -1,12 +1,13 @@
 const router = require('express').Router();
 const { Country } = require('../db/models');
+const { Aircraft } = require('../db/models');
 
 // GET Routes
 
 
 // GET all countries: api/countries/
 router.get('/', function (req, res, next) {
-  Country.findAll()
+  Country.findAll({include: {model: Aircraft}})
     .then(country => res.json(country))
     .catch(next);
 });
@@ -36,7 +37,6 @@ router.get('/:countryId', function (req, res, next) {
 router.post('/', function (req, res, next) {
   console.log('backend log: ', req.body)
 	Country.findOrCreate({where:{name: req.body.name}})
-  // .then(country => res.json(country))
   .spread((country, bool) => {
     return country.update({
       name: req.body.name,

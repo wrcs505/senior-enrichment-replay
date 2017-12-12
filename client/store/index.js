@@ -13,12 +13,14 @@ import allAircraft from './aircraft';
 import allCountries from './countries';
 import topFive from './topFive';
 import selectCountry from './newCountryEntry';
+import selectAircraft from './newAircraftEntry';
 
 const reducer = combineReducers({
   allAircraft,
   allCountries,
   topFive,
   selectCountry,
+  selectAircraft,
   form: formReducer
 });
 
@@ -36,3 +38,4 @@ export * from './aircraft';
 export * from './countries';
 export * from './topFive';
 export * from './newCountryEntry';
+export * from './newAircraftEntry';
