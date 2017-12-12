@@ -34,8 +34,16 @@ router.get('/:countryId', function (req, res, next) {
 // POST new country: api/countries
 
 router.post('/', function (req, res, next) {
-	Country.create(req.body)
-	.then(country => res.json(country))
+  console.log('backend log: ', req.body)
+	Country.findOrCreate({where:{name: req.body.name}})
+  // .then(country => res.json(country))
+  .spread((country, bool) => {
+    return country.update({
+      name: req.body.name,
+      GFI: req.body.GFI
+    })
+  })
+  .then(country => res.json(country))
 	.catch(next);
 });
 
@@ -51,10 +59,9 @@ router.put('/:countryId', function (req, res, next) {
 
 // DELETE a single country: api/countries/:countryId
 
-router.delete('/:countryId', function (req, res, next) {
-  const ID = req.params.countryId;
-  Country.destroy({where: {ID}})
-		.then(country => country.update(req.body))
+router.delete('/:countryName', function (req, res, next) {
+  const name = req.params.countryName;
+  Country.destroy({where: { name }})
 		.then(res.sendStatus(204))
     .catch(next);
 });

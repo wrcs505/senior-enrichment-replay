@@ -1,0 +1,31 @@
+
+
+
+Todos:
+
+
+___Update/Delete functionality on country components__
+
+SelectCountry component is returning the country name string, not the country object.
+
+The country property on state refers to my callback function and the string, not the country object
+
+***Can I get the correct country object on state without having to do an async request to the backend for a specific country?***
+
+___Viewing + Editing associations__
+
+***SOLUTION:
+1. do eager loading in queries instead of model
+2. filter allAircraft.countryId held on front end state
+
+Problem: Have to add country ownership on aircraft view, currently have countryId on aircraft model only.
+
+How can (and should) I load Countries onto Aircraft?
+
+Tried eager loading just like aircraft on countries, but previous attempt broke model, also would seem redundant.
+
+Possible to filter the correct country directly from state with ID property?
+
+Or is another async call required?
+
+___Create home page, add style__

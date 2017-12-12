@@ -5,6 +5,8 @@ import AircraftList from './AircraftList';
 import CountryList from './CountryList';
 import Navbar from './Navbar';
 import TopFive from './TopFive';
+import CountryRecords from './CountryRecords';
+import AircraftRecords from './AircraftRecords';
 
 export default class Main extends Component {
 
@@ -24,12 +26,14 @@ export default class Main extends Component {
       <div>
         <Navbar />
         <Switch>
+          <Route exact path="/country-records" component={ CountryRecords } />
+          <Route exact path="/aircraft-records" component={ AircraftRecords } />
           <Route exact path="/aircraft" component={ AircraftList } />
           <Route exact path="/aircraft/:aircraftID" component={ AircraftList } />
           <Route exact path="/countries" component={ CountryList } />
           <Route exact path="/countries/topfive" component={ TopFive } />
           <Route exact path="/countries/:countryID" component={ CountryList } />
-
+          <Redirect to="/aircraft/" />
           {
 
           }

@@ -4,6 +4,8 @@ import axios from 'axios';
 // ACTION TYPES
 const GET_COUNTRY = 'GET_COUNTRY';
 const GET_ALL_COUNTRIES = 'GET_ALL_COUNTRIES';
+const GET_NEW_COUNTRY = 'GET_COUNTRY';
+// const GET_COUNTRY = 'GET_COUNTRY';
 
 
 // ACTION CREATORS
@@ -30,29 +32,34 @@ export function fetchAllCountries () {
   };
 }
 
-
-
 export function postCountry (country, history) {
-
+console.log('thunk log: ', country)
   return function thunk (dispatch) {
-    return axios.post('/api/country', country)
+    return axios.post(`/api/countries/`, country)
       .then(res => res.data)
       .then(newCountry => {
         dispatch(getCountry(newCountry));
-        // socket.emit('new-country', newcountry);
         history.push(`/country/${newCountry.id}`);
       });
   };
 }
 
+export function deleteCountry (country, history) {
+  console.log('thunk log: ', country)
+
+    return function thunk (dispatch) {
+      return axios.delete(`/api/countries/${country.country}`)
+        .then(res => res.data)
+        .then(deletedCountry => deletedCountry);
+    };
+  }
+
 // REDUCER
 export default function reducer (state = [], action) {
 
   switch (action.type) {
-
-    // case GET_AIRCRAFT:
-    //   return [...state, action.aircraft];
-
+    case GET_COUNTRY:
+      return [...state, action.country]
     case GET_ALL_COUNTRIES:
       return  action.allCountries
     default:

@@ -4,7 +4,7 @@ import { withRouter, NavLink } from 'react-router-dom';
 export default function Country (props) {
 
   const country = props.country || [];
-  const countryAircraft = country.aircraft;
+  const countryAircraft = country.aircraft || [];
 
   console.log('country log: ', country.aircraft)
   return (
